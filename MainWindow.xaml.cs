@@ -29,9 +29,9 @@ namespace SeptemberExam
         {
             BikeData db = new BikeData();
 
-            var query = from r in db.Bikes
-                        orderby r.Name
-                        select r;
+            var query = from b in db.Bikes
+                        orderby b.Name
+                        select b;
 
 
             allBikes = query.ToList();
