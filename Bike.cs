@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,6 +29,12 @@ namespace SeptemberExam
             Price = Price + AddedVat;
 
         }
-    }
 
+    }
+     public class BikeData : DbContext
+    {
+        public BikeData() : base("mybikedata") { }
+
+        public DbSet<Bike> Bikes { get; set; }
+    }
 }
