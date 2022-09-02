@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SeptemberExam
 {
-    public enum Type
+    public enum BikeType
     {
         Racing,
         Regular,
@@ -20,7 +20,7 @@ namespace SeptemberExam
         public string Name { get; set; }
         public decimal Price { get; set; }
         public string Description { get; set; }
-        public Type TypeOfBike { get; set; }
+        public BikeType TypeOfBike { get; set; }
 
         //methods
         public void AddVat(decimal AddedVat)
