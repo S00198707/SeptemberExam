@@ -20,9 +20,36 @@ namespace SeptemberExam
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<Bike> allBikes;
         public MainWindow()
         {
             InitializeComponent();
+        }
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            BikeData db = new BikeData();
+
+            var query = from r in db.Bikes
+                        orderby r.Name
+                        select r;
+
+
+            allBikes = query.ToList();
+            lbxBikes.ItemsSource = allBikes;
+        }
+        private void lbxBikes_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //selected
+            Bike selected = lbxBikes.SelectedItem as Bike;
+
+            //not null
+            if (selected != null)
+            {
+                tblkBikeDetails.Text = selected.GetDescription();
+
+            }
+
+            //update display
         }
     }
 }

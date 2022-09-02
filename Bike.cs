@@ -16,6 +16,7 @@ namespace SeptemberExam
     public class Bike
     {
         //properties
+        public int BikeID { get; set; }
         public int ID { get; set; }
         public string Name { get; set; }
         public decimal Price { get; set; }
@@ -27,6 +28,19 @@ namespace SeptemberExam
         {
             AddedVat = Price * 0.23m;
             Price = Price + AddedVat;
+
+        }
+        public override string ToString()
+        {
+            return Name + Price;
+        }
+
+        public string GetDescription()
+        {
+            return
+                  $"Price{Price: C}\n" +
+                    $"Bike Descripton: {Description}\n"
+                    ;
 
         }
 
