@@ -30,6 +30,4 @@ namespace SeptemberExam
         }
     }
 
-
-    //methods
 }
